@@ -249,15 +249,17 @@ static int header_check_m2t(const unsigned char *buffer, const unsigned int buff
 
 static void register_header_check_m2ts(file_stat_t *file_stat)
 {
-  register_header_check(0xd7, hdmv_header, sizeof(hdmv_header), &header_check_m2ts, file_stat);
-  register_header_check(0xd7, hdpr_header, sizeof(hdpr_header), &header_check_m2ts, file_stat);
-  register_header_check(0xd7, sdvs_header, sizeof(sdvs_header), &header_check_m2ts, file_stat);
-  register_header_check(0x18b, tshv_header, sizeof(tshv_header), &header_check_m2t,  file_stat);
+  //register_header_check(0xd7, hdmv_header, sizeof(hdmv_header), &header_check_m2ts, file_stat);
+  //register_header_check(0xd7, hdpr_header, sizeof(hdpr_header), &header_check_m2ts, file_stat);
+  //register_header_check(0xd7, sdvs_header, sizeof(sdvs_header), &header_check_m2ts, file_stat);
+  //register_header_check(0x18b, tshv_header, sizeof(tshv_header), &header_check_m2t,  file_stat);
+    //register_header_check(0, "Enc0", 4, &header_check_m2t, file_stat);
 }
 
 static void register_header_check_ts(file_stat_t *file_stat)
 {
-  register_header_check(0, "G", 1,  &header_check_m2t, file_stat);
-  register_header_check(4, "G", 1,  &header_check_m2ts, file_stat);
+  //register_header_check(0, "G", 1,  &header_check_m2t, file_stat);
+  //register_header_check(4, "G", 1,  &header_check_m2ts, file_stat);
+  register_header_check(0, "Enc0", 4, &header_check_m2t, file_stat);
 }
 #endif
